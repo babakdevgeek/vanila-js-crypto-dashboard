@@ -1,0 +1,70 @@
+.search-result {
+  position: absolute;
+  bottom: -232%;
+  right: 0;
+  top: 44px;
+  background: var(--bg);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-card);
+  border-top: 1px solid var(--highlight);
+  border-radius: 6px;
+  padding: 1rem 0;
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  z-index: 10;
+  height: max-content;
+  color: var(--text-muted);
+  width: 100%;
+  max-width: 100%;
+}
+
+.search-result a {
+  margin: 0px 0.6rem;
+  display: flex;
+  gap: 0.9rem;
+  padding: 0.3rem 0.9rem;
+  align-items: center;
+  color: var(--text-muted);
+  justify-content: flex-start;
+  transition:
+    color,
+    background 0.3s ease;
+  border-radius: 6px;
+}
+
+.search-result a:hover {
+  background-color: var(--bg-light);
+  color: var(--text);
+}
+
+.search-result a img {
+  width: 20px;
+  height: 20px;
+}
+
+.search-result .market-cap-rank {
+  font-weight: bold;
+  font-size: 21px;
+}
+
+.search-result .desc-truncated {
+  /* height: 200px; */
+
+  text-align: left;
+}
+
+.search-result .no-result-found {
+  text-align: center;
+  color: var(--danger);
+}
+
+.search-result .name {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-weight: 200;
+  font-size: 18px;
+}

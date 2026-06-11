@@ -1,0 +1,139 @@
+/* Chart*/
+.chart {
+  --chart-width: 160px;
+  --chart-height: 160px;
+
+  border-radius: 50%;
+  min-width: var(--chart-height);
+  height: var(--chart-height);
+  margin-right: 1rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 500px 10px rgba(0, 0, 0, 0.2);
+}
+.chart span {
+  z-index: 10;
+  font-weight: 600;
+  font-size: 1rem;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  padding: 0px 1rem;
+  color: var(--text);
+  text-wrap: wrap;
+  width: calc(var(--chart-width) / 4 * 3);
+  height: calc(var(--chart-height) / 4 * 3);
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-size: 101px 60px;
+  /* background-repeat: repeat; */
+  backdrop-filter: blur(20px);
+  background-image: linear-gradient(2deg, rgb(0 0 0 / 0%), rgb(0 0 0 / 21%));
+  border-radius: 50%;
+}
+
+.chart::before {
+  content: "";
+  width: calc(var(--chart-width) / 4 * 3);
+  height: calc(var(--chart-height) / 4 * 3);
+  border-radius: 50%;
+  background-color: var(--bg-dark);
+  position: absolute;
+  z-index: 1;
+}
+
+.btc {
+  background: #f7931a;
+}
+.eth {
+  background: #627eea;
+}
+.usdt {
+  background: #26a17b;
+}
+.usdc {
+  background: #1ec4b3;
+}
+.sol {
+  background: #044993;
+}
+.bnb {
+  background: #d6f71a;
+}
+.others {
+  background: #888;
+}
+
+.dominance-section {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column-reverse;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  margin-bottom: 1.8rem;
+}
+.dominance-section p {
+  text-align: right;
+}
+
+.container-chart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+}
+
+.container-chart .legend {
+  min-width: 150px;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.legend {
+  width: 100%;
+  min-height: 94.4px;
+}
+
+.legend-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.legend-item-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.3rem;
+  align-items: start;
+}
+
+.container-chart .legend span {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  margin-right: 8px;
+}
+
+@media screen and (min-width: 1100px) {
+  .chart {
+    --chart-width: 240px;
+    --chart-height: 240px;
+  }
+  .dominance-section {
+    flex-direction: row;
+  }
+}

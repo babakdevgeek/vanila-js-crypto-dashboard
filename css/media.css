@@ -1,0 +1,24 @@
+@media screen and (min-width: 500px) {
+  .global p:nth-child(2) {
+    display: block;
+  }
+}
+@media screen and (min-width: 600px) {
+  #button-menu-bar {
+    display: none;
+  }
+
+  #container-navEl .nav-left {
+    width: 40%;
+  }
+
+  #container-navEl .nav-right > ul {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  #container-navEl .nav-left {
+    width: 50%;
+  }
+}

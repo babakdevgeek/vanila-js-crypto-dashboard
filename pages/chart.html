@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+      integrity="sha512-XcIsjKMcuVe0Ucj/xgIXQnytNwBttJbNjltBV18IOnru2lDPe9KRRyvCXw6Y5H415vbBLRm8+q6fmLUU7DfO6Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script type="module" src="../js/pages/chart.js"></script>
+
+    <title>چارت</title>
+  </head>
+  <body>
+    <header>
+      <!--Global bar-->
+      <div class="global">
+        <div class="container">
+          <p id="count-coins">ارزها: <b>N/A</b></p>
+          <p id="count-exchanges">صرافی ها: <b>N/A</b></p>
+          <p id="market-cap">مارکت کپ: <b>N/A</b></p>
+          <p id="market-change">تغییرات بازار: <b>N/A</b></p>
+        </div>
+      </div>
+      <!--Navbar-->
+      <div id="container-navEl">
+        <nav>
+          <div class="nav-right">
+            <a id="link-logo" href="../index.html">لوگو.</a>
+
+            <ul>
+              <li id="li-home"><a href="../index.html">صفحه اصلی</a></li>
+              <li id="li-chart"><a href="./chart.html">چارت</a></li>
+              <li id="li-about"><a href="./about.html">درباره ی وبسایت</a></li>
+            </ul>
+          </div>
+
+          <div class="nav-left">
+            <form action="search()">
+              <input type="text" placeholder="btc eth sol etc.." />
+              <button class="action-button" type="submit">
+                <i class="ri-search-line"></i>
+              </button>
+              <div class="search-result"></div>
+            </form>
+
+            <!--Sun class is: ri-sun-line-->
+
+            <div class="nav-left-wrapper-buttons">
+              <button class="action-button" id="button-theme">
+                <i class="ri-moon-cloudy-line"></i>
+              </button>
+              <button class="action-button" id="button-menu-bar">
+                <i class="ri-menu-line"></i>
+              </button>
+            </div>
+          </div>
+
+          <!--Menu content on phone screens-->
+          <div id="phone-nav-menu">
+            <button class="action-button" id="phone-button-back-menu">
+              <i class="ri-arrow-go-back-line"></i>
+            </button>
+            <ul>
+              <li><a href="../index.html">صفحه اصلی</a></li>
+              <li><a href="./chart.html">چارت</a></li>
+              <li><a href="./about.html">درباره ی ما</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div id="trading-view-fullpage">
+        <!-- TradingView Widget BEGIN -->
+        <div
+          class="tradingview-widget-container"
+          style="height: 100%; width: 100%"
+        >
+          <div
+            class="tradingview-widget-container__widget"
+            style="height: calc(100% - 32px); width: 100%"
+          ></div>
+          <div class="tradingview-widget-copyright">
+            <a
+              href="https://www.tradingview.com/symbols/BTCUSD/?exchange=BITSTAMP"
+              rel="noopener nofollow"
+              target="_blank"
+              ><span class="blue-text">Bitcoin price</span></a
+            ><span class="trademark"> by TradingView</span>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>© تمامی حقوق محفوظ است</p>
+      <div class="social">
+        <a href="https://github.com/babakdevgeek"
+          ><i class="ri-github-line"></i
+        ></a>
+        <a href="https://t.me/truerex"><i class="ri-telegram-2-line"></i></a>
+      </div>
+    </footer>
+  </body>
+</html>

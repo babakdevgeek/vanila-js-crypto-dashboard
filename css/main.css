@@ -1,0 +1,43 @@
+/* Main section */
+
+main {
+  max-width: 1400px;
+  margin: 1rem auto 2rem;
+  padding: 1rem;
+  min-height: calc(100vh - 100px - 37px - 16px - 32px);
+}
+.container-main-tables {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.container-main-tables #trending-nfts-table-wrapper,
+.container-main-tables #trending-coins-table-wrapper {
+  overflow-x: scroll;
+  border-radius: 9px;
+  min-height: 40vh;
+  border: 1px solid var(--border-card);
+  box-shadow: var(--shadow);
+  background-color: var(--bg);
+}
+
+.container-main-tables #trending-coins-table-wrapper table tbody tr {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.container-main-tables #trending-coins-table-wrapper table tbody tr:hover {
+  background-color: var(--bg-light);
+}
+
+.container-main-tables img {
+  width: 50px;
+  height: 50px;
+}
+
+@media screen and (min-width: 820px) {
+  .container-main-tables #trending-nfts-table-wrapper,
+  .container-main-tables #trending-coins-table-wrapper {
+    overflow: hidden;
+  }
+}
