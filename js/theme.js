@@ -38,6 +38,19 @@ export default class Theme {
         }
     }
 
+    static load_static() {
+        const theme_in_local = this.get(this.name_local_storage);
+
+        if (!theme_in_local) {
+            const user_device_theme = this.get_user_device_preference()
+            this.set(user_device_theme);
+            this.apply(user_device_theme)
+            return
+        }
+
+        this.apply(theme_in_local)
+    }
+
     load() {
         const theme_in_local = this.get(this.name_local_storage);
 
