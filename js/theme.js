@@ -38,18 +38,7 @@ export default class Theme {
         }
     }
 
-    static load_static() {
-        const theme_in_local = this.get(this.name_local_storage);
 
-        if (!theme_in_local) {
-            const user_device_theme = this.get_user_device_preference()
-            this.set(user_device_theme);
-            this.apply(user_device_theme)
-            return
-        }
-
-        this.apply(theme_in_local)
-    }
 
     load() {
         const theme_in_local = this.get(this.name_local_storage);
@@ -84,10 +73,10 @@ export default class Theme {
         const icon = this.get_icon(theme)
         this.el_i.classList = [icon]
         if (theme === "dark") {
-            document.body.classList.add("dark")
+            document.documentElement.classList.add("dark")
         }
         if (theme === "light") {
-            document.body.classList.remove("dark")
+            document.documentElement.classList.remove("dark")
         }
     }
 }

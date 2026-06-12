@@ -7,7 +7,9 @@
       const theme = localStorage.getItem("THEME");
 
       if (theme === "dark") {
-        document.body.classList.add("dark");
+        console.log(document.documentElement);
+
+        document.documentElement.classList.add("dark");
       }
     </script>
     <link rel="stylesheet" href="./css/index.css" />
