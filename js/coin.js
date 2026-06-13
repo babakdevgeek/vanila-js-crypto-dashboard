@@ -129,6 +129,7 @@ export default class Coin {
             return el_row;
         })
         this.el_info.append(...rows);
+        this.remove_skeleton_class(this.el_info);
     }
 
     render_additional_info(data) {
@@ -164,6 +165,8 @@ export default class Coin {
         const whitepaper_row = create_element("div", ["coin-description-row"], null, null, [whitepaper_span1, whitepaper_span2])
 
         this.el_additional_info.append(ath_row, atl_row, price_percentage_change_30d_row, homepage_row, whitepaper_row);
+        this.remove_skeleton_class(this.el_additional_info);
+
     }
 
     refresh_chart() {
@@ -191,6 +194,7 @@ export default class Coin {
         button.addEventListener("click", event => {
             window.location.href = window.location.origin + `/pages/chart.html?sym=${data.symbol}`;
         })
+        this.remove_skeleton_class(this.el_chart)
     }
 
     render_description(data) {
@@ -199,6 +203,11 @@ export default class Coin {
 
         this.el_description.querySelector("b").textContent = name;
         this.el_description.querySelector("p").textContent = desc;
+        this.remove_skeleton_class(this.el_description);
+    }
+
+    remove_skeleton_class(element) {
+        element.classList.remove("skeleton");
     }
 
     async render() {

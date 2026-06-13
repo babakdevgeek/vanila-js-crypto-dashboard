@@ -80,6 +80,15 @@
   border: 1px solid var(--border-card);
 }
 
+.coin-info {
+  min-height: 439px;
+}
+.coin-description {
+  min-height: 64px;
+}
+.coin-additional-info {
+  min-height: 186px;
+}
 .coin-name {
   display: flex;
   gap: 1rem;
