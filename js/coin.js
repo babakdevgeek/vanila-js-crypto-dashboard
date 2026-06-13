@@ -43,6 +43,10 @@ export default class Coin {
             })
             return formatter.format(data);
         }
+        if (type === "compact_currency") {
+            const formatter = new Intl.NumberFormat("en-US", { notation: "compact", compactDisplay: "short", style: "currency", currency: "USD" });
+            return formatter.format(data);
+        }
         if (type === "percent") {
             const formatter = new Intl.NumberFormat("en-US", {
                 maximumFractionDigits: 2,
@@ -67,18 +71,19 @@ export default class Coin {
         this.el_info.replaceChildren(h1)
 
         // Coin info body
+
         const rows_data = {
             marketcap_rank: data.market_cap_rank,
             price: this.format(data.market_data.current_price.usd, "currency"),
-            change_24h: this.format(data.market_data.price_change_percentage_24h, "percent"),
-            change_7day: this.format(data.market_data.price_change_percentage_7d, "percent"),
-            marketcap: this.format(data.market_data.market_cap.usd, "currency"),
-            volume_24h: this.format(data.market_data.total_volume.usd, "currency"),
-            circulating_supply: this.format(data.market_data.circulating_supply, "currency"),
-            total_supply: this.format(data.market_data.total_supply, "currency"),
-            max_supply: data.market_data.max_supply_infinite ? "نامحدود" : this.format(data.market_data.max_supply, "currency"),
+            change_24h: data.market_data.price_change_percentage_24h.toFixed(1),
+            change_7day: data.market_data.price_change_percentage_7d.toFixed(1),
+            marketcap: this.format(data.market_data.market_cap.usd, "compact_currency"),
+            volume_24h: this.format(data.market_data.total_volume.usd, "compact_currency"),
+            circulating_supply: this.format(data.market_data.circulating_supply, "compact_currency"),
+            total_supply: this.format(data.market_data.total_supply, "compact_currency"),
+            max_supply: data.market_data.max_supply_infinite ? "نامحدود" : this.format(data.market_data.max_supply, "compact_currency"),
             max_supply_infinite: data.market_data.max_supply_infinite ? "بله" : "خیر",
-            fully_diluted_valuation: this.format(data.market_data.fully_diluted_valuation.usd, "currency"),
+            fully_diluted_valuation: this.format(data.market_data.fully_diluted_valuation.usd, "compact_currency"),
         }
 
         const rows = Object.entries(rows_data).map(([key, value]) => {
@@ -86,6 +91,7 @@ export default class Coin {
             el_row.classList.add("coin-info-row");
             const el_key = document.createElement("span");
             const el_value = document.createElement("span");
+            const color = value >= 0 ? "var(--success)" : "var(--danger)";
             switch (key) {
                 case "marketcap_rank":
                     el_key.textContent = "رتبه بازار";
@@ -95,9 +101,13 @@ export default class Coin {
                     break;
                 case "change_24h":
                     el_key.textContent = "تغییر 24 ساعته";
+                    el_value.style.color = color
+                    el_value.style.direction = "ltr";
                     break;
                 case "change_7day":
                     el_key.textContent = "تغییر 7 روزه";
+                    el_value.style.color = color
+                    el_value.style.direction = "ltr";
                     break;
                 case "marketcap":
                     el_key.textContent = "مارکت کپ";
@@ -123,7 +133,13 @@ export default class Coin {
                     el_value.style.color = value == "خیر" ? "var(--success)" : "var(--danger)";
                     break;
             }
-            el_value.textContent = value;
+
+            if (key === "change_24h" || key === "change_7day") {
+                el_value.textContent = value + " " + "%";
+            } else {
+                el_value.textContent = value;
+            }
+
             el_row.appendChild(el_key);
             el_row.appendChild(el_value);
             return el_row;
@@ -182,6 +198,7 @@ export default class Coin {
         this.el_custom = document.createElement("tv-mini-chart");
         this.el_custom.setAttribute("symbol", `MEXC:${symbol}USDT`);
         this.el_custom.setAttribute("theme", Theme.get_theme_static());
+        this.el_custom.setAttribute("time-frame", "1M");
 
         // script of tradingview
         const script = document.createElement("script");
