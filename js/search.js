@@ -39,10 +39,10 @@ export default class Search {
         this.el_input.addEventListener("input", (event) => {
             clearTimeout(this.timeout);
             this.timeout = null;
+            this.data = null;
             const query = event.target.value.trim()
             if (!query) {
                 this.el_search_result.style.display = "none";
-                this.data = null;
                 return;
             };
             this.timeout = setTimeout(() => {
@@ -103,7 +103,7 @@ export default class Search {
     }
 
     async render(data) {
-
+        this.el_search_result.innerHTML = "";
 
         if (data === undefined) {
             this.render_no_results_found("u")
