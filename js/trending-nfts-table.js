@@ -24,8 +24,8 @@ export default class TrendingNftsTable extends TrendingTable {
                     "color: var(--danger)" : "color: var(--success)"}">
             ${parseFloat(item.data.floor_price_in_usd_24h_percentage_change).toFixed(2)}%</td>
             <td>${item.data.h24_volume}</td>
-            <td>${item.data.h24_average_sale_price}</td>
-                  <td>${item.data.floor_price}</td>
+            <td>${item.data.floor_price}</td>
+                  <td>${item.data.h24_average_sale_price}</td>
                   <td><img
                       loading="lazy"
                       src="${item.data.sparkline}"
