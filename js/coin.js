@@ -65,6 +65,7 @@ export default class Coin {
         const img = document.createElement("img");
         h1.classList.add("coin-name");
         img.src = data.image.small;
+        img.loading = "lazy";
         img.alt = `تصویر ارز ${data.name}`;
         h1.appendChild(document.createTextNode(data.name));
         h1.appendChild(img);

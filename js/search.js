@@ -118,7 +118,7 @@ export default class Search {
         const html = data.map(d => {
             const url = this.get_url(d.id)
             const span1 = create_element("span", ["market-cap-rank"], null, d.market_cap_rank);
-            const img = create_element("img", null, { src: d.thumb, alt: d.id });
+            const img = create_element("img", null, { src: d.thumb, alt: d.id, loading: "lazy" });
             const span2 = create_element("span", ["icon"], null, null, [img]);
             const span3 = create_element("span", ["name"], null, `${d.name} ${d.symbol}`);
             const a = create_element("a", ["search-result-item"], { href: url }, null, [span1, span2, span3]);
