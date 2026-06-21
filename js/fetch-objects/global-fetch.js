@@ -26,7 +26,7 @@ class GlobalFetch {
     }
 
     save_storage(data) {
-        localStorage.setItem("GLOBAL_HEADER", { global_header: JSON.stringify(data), timestamp: Date.now() });
+        localStorage.setItem("GLOBAL_HEADER", JSON.stringify({ global_header: JSON.stringify(data), timestamp: Date.now() }));
     }
 
     get_storage() {
