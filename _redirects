@@ -1,5 +1,1 @@
-/          /index.html 200
-/about     /index.html 200
-/chart     /index.html 200
-/chart/:coin   /index.html 200
-/coin/:singlecoin   /index.html 200
+/* / 200
