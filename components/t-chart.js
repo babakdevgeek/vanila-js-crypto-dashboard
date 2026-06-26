@@ -35,9 +35,14 @@ export default class CustomTChart extends HTMLElement {
         const theme = get_theme();
 
         const path = window.location.pathname;
-
-        const coin_symbol = path.split("/")[path.split("/").length - 1];
-        document.title = "چارت" + ` ${coin_symbol ? coin_symbol : "btc"}`
+        const path_last_section = path.split("/")[path.split("/").length - 1];
+        let coin_symbol;
+        if (path_last_section == "/chart") {
+            coin_symbol = "btc";
+        } else {
+            coin_symbol = path_last_section;
+        }
+        document.title = "چارت" + " " + coin_symbol;
 
         const root = getComputedStyle(document.documentElement);
         const bg = root.getPropertyValue(theme === "light" ? "--td-light-bg-rgb" : "--td-dark-bg-rgb").trim();
@@ -56,7 +61,7 @@ export default class CustomTChart extends HTMLElement {
             "locale": "en",
             "save_image": true,
             "style": "1",
-            "symbol": coin_symbol ? `MEXC:${coin_symbol.toUpperCase()}USDT` : "MEXC:BTCUSDT",
+            "symbol": `MEXC:${coin_symbol.toUpperCase()}USDT`,
             "theme": theme,
             "timezone": "Asia/Tehran",
             "backgroundColor": bg,
