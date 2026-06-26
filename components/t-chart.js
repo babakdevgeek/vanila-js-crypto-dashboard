@@ -36,8 +36,10 @@ export default class CustomTChart extends HTMLElement {
 
         const path = window.location.pathname;
         const path_last_section = path.split("/")[path.split("/").length - 1];
+        console.log(path_last_section);
+
         let coin_symbol;
-        if (path_last_section == "/chart") {
+        if (path_last_section == "chart") {
             coin_symbol = "btc";
         } else {
             coin_symbol = path_last_section;
