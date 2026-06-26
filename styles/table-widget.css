@@ -1,0 +1,60 @@
+.table-widget button {
+  background-color: transparent;
+  color: var(--text);
+  outline: none;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  font-size: 0.9rem;
+  font-weight: 200;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  justify-content: space-between;
+}
+
+custom-table-widget h1 {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.table-widget button:active {
+  transform: none;
+}
+.table-widget button:hover {
+  background-color: var(--bg-light);
+  /* color: var(--text); */
+  transition: background-color 300ms ease;
+}
+
+.table-widget button.active {
+  background-color: var(--primary);
+
+  /* color: var(--bg-dark); */
+}
+
+.table-widget button.active,
+.table-widget button.active i {
+  color: var(--bg-dark);
+}
+
+.table-widget {
+  border: 1px solid var(--border-card);
+  display: inline-block;
+  border-radius: 9px;
+  background-color: var(--bg);
+  overflow: hidden;
+  border-top: 1px solid var(--highlight);
+  box-shadow: var(--shadow);
+}
+
+.table-widget i {
+  color: var(--text-muted);
+}
+
+@media screen and (min-width: 600px) {
+  .table-widget button {
+    width: auto;
+  }
+}

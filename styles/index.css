@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Estedad:wght@100..900&family=Lateef:wght@200;300;400;500;600;700;800&display=swap");
+@import url("./base.css");
+@import url("./header.css");
+@import url("./main.css");
+@import url("./table.css");
+@import url("./dominace.css");
+@import url("./media.css");
+@import url("./footer.css");
+@import url("./search.css");
+@import url("./coin.css");
+@import url("./accordion.css");
+@import url("./about.css");
+@import url("./table-widget.css");
+
+:root {
+  --bg-dark: oklch(0.92 0.08 276);
+  --bg: oklch(0.96 0.08 276);
+  --bg-light: oklch(1 0.08 276);
+  --text: oklch(0.15 0.16 276);
+  --text-muted: oklch(0.4 0.16 276);
+  --highlight: oklch(1 0.16 276);
+  --border: oklch(0.6 0.16 276);
+  --border-muted: oklch(0.7 0.16 276);
+  --border-card: var(--bg);
+  --primary: oklch(0.4 0.16 276);
+  --secondary: oklch(0.4 0.16 96);
+  --danger: oklch(0.5 0.16 30);
+  --warning: oklch(0.5 0.16 100);
+  --success: oklch(0.5 0.16 160);
+  --info: oklch(0.5 0.16 260);
+  --shadow:
+    0px 2px 2px hsla(0 0% 0% / 0.015), 0px 4px 4px hsla(0, 0%, 0%, 0.15);
+  --td-light-bg-rgb: rgb(227, 238, 297);
+  --td-light-grid-rgb: rgb(133, 147, 256);
+  --td-dark-bg-rgb: rgb(6, 3, 44);
+  --td-dark-grid-rgb: rgb(33, 20, 123);
+  /* --color-primary: #2c5ead;
+  --color-border: #1591dc;
+  --color-secondary-glassy: #1590dc17;
+  --color-accent: #4bb8fa;
+  --color-accent--galssy: #4bb7fa2c;
+  --color-secondary: #c4e2f5;
+  --color-background: #d9dce1;
+  --text-muted: #211f1f;
+
+  --color-good: #7be877;
+  --color-s-white: #e6edef;
+  --color-bad: #f55044;
+  --color-warning: #f8c477; */
+}
+
+body {
+  color: var(--text-muted);
+  background-color: var(--bg-dark);
+  font-family: "Estedad", sans-serif;
+  scroll-behavior: smooth;
+  font-size: 14px;
+}
+
+.dark {
+  --bg-dark: oklch(0.1 0.08 276);
+  --bg: oklch(0.15 0.08 276);
+  --bg-light: oklch(0.2 0.08 276);
+  --text: oklch(0.96 0.1 276);
+  --text-muted: oklch(0.76 0.1 276);
+  --highlight: oklch(0.5 0.16 276);
+  --border: oklch(0.4 0.16 276);
+  --border-muted: oklch(0.3 0.16 276);
+  --border-card: var(--border);
+  --primary: oklch(0.76 0.16 276);
+  --secondary: oklch(0.76 0.16 96);
+  --danger: oklch(0.7 0.16 30);
+  --warning: oklch(0.7 0.16 100);
+  --success: oklch(0.7 0.16 160);
+  --info: oklch(0.7 0.16 260);
+  /* --color-primary: #121358; */
+  /* --color-secondary: #232f72; */
+  /* --color-accent: #2f578a; */
+  /* --color-border: #36ada3; */
+  /* --color-background: #272728;
+  --text-muted: #fff; */
+  /* --color-bad: #bf1d1d; */
+}
+
+.success {
+  color: var(--success);
+}
+
+.danger {
+  color: var(--danger);
+}
+
+.ltr {
+  direction: ltr;
+}
+
+.title {
+  color: var(--text);
+  font-weight: 900;
+  margin: 1rem;
+}

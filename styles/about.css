@@ -1,0 +1,20 @@
+.about {
+  min-height: 50vh;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.about a {
+  margin-top: 1.2rem;
+}
+.about a,
+.about p {
+  text-align: center;
+}
+
+.about a i {
+  font-size: 6rem;
+}
