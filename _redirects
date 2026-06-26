@@ -1,1 +1,5 @@
-/* /index.html 200
+/          /index.html 200
+/about     /index.html 200
+/chart     /index.html 200
+/chart/*   /index.html 200
+/coin/*    /index.html 200
