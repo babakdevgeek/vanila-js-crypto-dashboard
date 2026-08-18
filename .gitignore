@@ -1,0 +1,9 @@
+node_modules/
+npm-debug.log*
+.npm
+.claude/
+*.log
+.DS_Store
+dev-server.js
+deploy.sh
+DEPLOY-CHECKLIST.md
