@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const PORT = 3000;
-const ROOT = __dirname;
+const ROOT = path.join(__dirname, 'public');
 
 const mimeTypes = {
   '.html': 'text/html',
