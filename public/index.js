@@ -15,6 +15,8 @@ import CustomSearchBar from "./components/search-bar.js";
 import CustomSearch from "./components/search.js";
 import CustomTChart from "./components/t-chart.js";
 import CustomTableWidget from "./components/table-widget.js";
+import MarketOverview from "./components/market-overview.js";
+import MarketTable from "./components/market-table.js";
 import CustomTable from "./components/table.js";
 import CustomThemeButton from "./components/theme-button.js";
 import about from "./page-components/about.js";
@@ -156,6 +158,8 @@ function define_custom_elements() {
     customElements.define("custom-phone-menu", CustomPhoneMenu);
     customElements.define("custom-coins-table", CustomCoinsTable);
     customElements.define("custom-table-widget", CustomTableWidget);
+    customElements.define("market-overview", MarketOverview);
+    customElements.define("market-table", MarketTable);
     customElements.define("custom-nfts-table", CustomNftTable);
     customElements.define("custom-categories-table", CustomCategoriesTable);
     customElements.define("custom-footer", CustomFooter);

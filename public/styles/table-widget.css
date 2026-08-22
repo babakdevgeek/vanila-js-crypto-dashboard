@@ -4,9 +4,9 @@
   outline: none;
   border: none;
   box-shadow: none;
-  border-radius: 0;
+  border-radius: 7px;
   font-size: 0.9rem;
-  font-weight: 200;
+  font-weight: 500;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -15,8 +15,9 @@
 }
 
 custom-table-widget h1 {
-  font-size: 1.6rem;
-  font-weight: bold;
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin: 0 0 0.75rem;
 }
 
 .table-widget button:active {
@@ -40,13 +41,12 @@ custom-table-widget h1 {
 }
 
 .table-widget {
-  border: 1px solid var(--border-card);
-  display: inline-block;
+  display: inline-flex;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  border: 1px solid var(--border-muted);
   border-radius: 9px;
-  background-color: var(--bg);
-  overflow: hidden;
-  border-top: 1px solid var(--highlight);
-  box-shadow: var(--shadow);
+  background-color: var(--bg-light);
 }
 
 .table-widget i {

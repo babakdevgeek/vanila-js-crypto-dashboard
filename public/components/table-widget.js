@@ -13,7 +13,7 @@ export default class CustomTableWidget extends HTMLElement {
     }
 
     onClick(event) {
-        const our_button = event.target.closest("button");
+        const our_button = event.target.closest("button[data-show-coins], button[data-show-nfts], button[data-show-categories]");
         if (!our_button) return;
         this.widget_table_container.innerHTML = "";
         Array.from(this.querySelectorAll("button")).filter(in_b => in_b !== our_button).forEach(btn => btn.classList.remove("active"));

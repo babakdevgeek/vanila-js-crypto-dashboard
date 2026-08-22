@@ -5,15 +5,15 @@
   position: sticky;
   right: 0;
   width: 50px;
-  background-color: var(--bg-light);
+  background-color: var(--bg);
 }
 .table-wrapper table th:nth-child(1),
 .table-wrapper table td:nth-child(1) {
   position: sticky;
-  right: 5px;
+  right: 0;
   z-index: 30;
   width: 50px;
-  background-color: var(--bg-light);
+  background-color: var(--bg);
 }
 .table-wrapper table th:first-child,
 .table-wrapper table td:first-child {
@@ -25,11 +25,11 @@
 .table-wrapper table th:nth-child(1),
 .table-wrapper table td:nth-child(1) {
   position: sticky;
-  right: 5px;
+  right: 0;
   text-overflow: ellipsis;
   white-space: wrap;
   overflow: hidden;
-  background-color: var(--bg-light);
+  background-color: var(--bg);
 }
 
 .table-wrapper.skeleton table th:first-child,
@@ -47,6 +47,26 @@
   min-width: 700px;
   width: 100%;
   font-size: 14px;
+}
+
+.sort-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.2rem;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: none;
+  font: inherit;
+  font-weight: inherit;
+}
+
+.sort-control:hover,
+.sort-control:focus-visible {
+  color: var(--primary);
+  background: var(--highlight);
 }
 
 .skeleton {

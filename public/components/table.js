@@ -14,7 +14,7 @@ export default class CustomTable extends HTMLElement {
     }
 
 
-    on_table_row_click(event, page) {
+    on_table_row_click(event, page = "coin") {
         const tr = event.target.closest("tr");
         const id = tr.dataset.id
         if (id) {
@@ -49,5 +49,4 @@ export default class CustomTable extends HTMLElement {
 
     }
 }
-
 

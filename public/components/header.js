@@ -55,7 +55,7 @@ export default class CustomHeader extends HTMLElement {
                             tag: "nav", childrens: [
                                 create_element({
                                     tag: "div", class_names: ["nav-right"], childrens: [
-                                        create_element({ tag: "a", id: "link-logo", attrs: { href: "/", "data-spa": true }, text: "لوگو." }),
+                                        create_element({ tag: "a", id: "link-logo", attrs: { href: "/", "data-spa": true }, text: "کوین‌نما" }),
                                         create_element({
                                             tag: "ul", childrens: [
                                                 create_element({

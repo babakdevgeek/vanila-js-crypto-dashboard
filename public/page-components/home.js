@@ -1,10 +1,13 @@
 import create_element from "../custom-functions/create_element.js";
 
 export default function home(params) {
-    document.title = "YOUR USER HELPER"
+    document.title = "کوین‌نما | بازار رمزارز"
     const container = create_element({ tag: "div" });
 
+    const overview = create_element({ tag: "market-overview" });
+    const market_table = create_element({ tag: "market-table" });
     const table_widget = create_element({ tag: "custom-table-widget" });
-    container.append(table_widget);
+    overview.addEventListener("currencychange", (event) => market_table.dispatchEvent(new CustomEvent("currencychange", { detail: event.detail })));
+    container.append(overview, market_table, table_widget);
     return container;
 }

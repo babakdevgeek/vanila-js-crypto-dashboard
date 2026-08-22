@@ -11,25 +11,25 @@
 @import url("./accordion.css");
 @import url("./about.css");
 @import url("./table-widget.css");
+@import url("./market-pulse.css");
 
 :root {
-  --bg-dark: oklch(0.92 0.08 276);
-  --bg: oklch(0.96 0.08 276);
-  --bg-light: oklch(1 0.08 276);
-  --text: oklch(0.15 0.16 276);
-  --text-muted: oklch(0.4 0.16 276);
-  --highlight: oklch(1 0.16 276);
-  --border: oklch(0.6 0.16 276);
-  --border-muted: oklch(0.7 0.16 276);
-  --border-card: var(--bg);
-  --primary: oklch(0.4 0.16 276);
-  --secondary: oklch(0.4 0.16 96);
-  --danger: oklch(0.5 0.16 30);
-  --warning: oklch(0.5 0.16 100);
-  --success: oklch(0.5 0.16 160);
-  --info: oklch(0.5 0.16 260);
-  --shadow:
-    0px 2px 2px hsla(0 0% 0% / 0.015), 0px 4px 4px hsla(0, 0%, 0%, 0.15);
+  --bg-dark: #eef3f8;
+  --bg: #ffffff;
+  --bg-light: #f7f9fc;
+  --text: #15223d;
+  --text-muted: #65728a;
+  --highlight: #e5f0ff;
+  --border: #9fb4d2;
+  --border-muted: #dbe4ef;
+  --border-card: #dbe4ef;
+  --primary: #1e3768;
+  --secondary: #087d73;
+  --danger: #c84d5a;
+  --warning: #b17919;
+  --success: #087d73;
+  --info: #3672b6;
+  --shadow: 0 1px 2px rgb(21 34 61 / 0.04), 0 10px 28px rgb(21 34 61 / 0.08);
   --td-light-bg-rgb: rgb(227, 238, 297);
   --td-light-grid-rgb: rgb(133, 147, 256);
   --td-dark-bg-rgb: rgb(6, 3, 44);
@@ -58,21 +58,21 @@ body {
 }
 
 .dark {
-  --bg-dark: oklch(0.1 0.08 276);
-  --bg: oklch(0.15 0.08 276);
-  --bg-light: oklch(0.2 0.08 276);
-  --text: oklch(0.96 0.1 276);
-  --text-muted: oklch(0.76 0.1 276);
-  --highlight: oklch(0.5 0.16 276);
-  --border: oklch(0.4 0.16 276);
-  --border-muted: oklch(0.3 0.16 276);
-  --border-card: var(--border);
-  --primary: oklch(0.76 0.16 276);
-  --secondary: oklch(0.76 0.16 96);
-  --danger: oklch(0.7 0.16 30);
-  --warning: oklch(0.7 0.16 100);
-  --success: oklch(0.7 0.16 160);
-  --info: oklch(0.7 0.16 260);
+  --bg-dark: #0d1628;
+  --bg: #121f35;
+  --bg-light: #182841;
+  --text: #f0f5ff;
+  --text-muted: #aab9cf;
+  --highlight: #22395e;
+  --border: #3c5680;
+  --border-muted: #263b5c;
+  --border-card: #263b5c;
+  --primary: #9ec5ff;
+  --secondary: #47c9b5;
+  --danger: #ff8993;
+  --warning: #f2c76b;
+  --success: #47c9b5;
+  --info: #83b4ff;
   /* --color-primary: #121358; */
   /* --color-secondary: #232f72; */
   /* --color-accent: #2f578a; */
