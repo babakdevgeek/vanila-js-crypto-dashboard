@@ -1,12 +1,22 @@
 export default {
   async fetch(request, env) {
-    // Look up the requested file in static assets
-    const response = await env.ASSETS.fetch(request);
-    if (response.ok) {
-      return response;
+    try {
+      const response = await env.ASSETS.fetch(request);
+      if (response.ok) return response;
+    } catch (e) {
+      // Asset fetch failed, fall through to SPA fallback
     }
 
-    // File not found → serve index.html for the client-side router
-    return env.ASSETS.fetch(new Request(new URL("/index.html", request.url)));
+    // SPA fallback: serve index.html
+    try {
+      const url = new URL(request.url);
+      url.pathname = "/index.html";
+      const response = await env.ASSETS.fetch(url.toString());
+      if (response.ok) return response;
+    } catch (e) {
+      // index.html fetch also failed
+    }
+
+    return new Response("Not Found", { status: 404 });
   },
 };
