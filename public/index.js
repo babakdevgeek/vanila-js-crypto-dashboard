@@ -24,6 +24,7 @@ import chart from "./page-components/chart.js";
 import coin from "./page-components/coin.js";
 import home from "./page-components/home.js";
 import Router from "./router.js";
+import BtcChartFrame from "./components/btc-chart-frame.js";
 window.format_number = function (
     value,
     {
@@ -170,4 +171,5 @@ function define_custom_elements() {
     customElements.define("coin-widget-chart", CustomCoinWidgetChart);
     customElements.define("coin-widget-add-info", CustomCoinWidgetAddInfo);
     customElements.define("coin-widget-description", CustomCoinWidgetDescription);
+    customElements.define("btc-chart-frame",BtcChartFrame);
 }
