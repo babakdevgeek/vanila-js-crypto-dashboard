@@ -43,7 +43,7 @@ market-table .table-wrapper { min-height: 0; margin: 0; }
 .market-coin img { width: 30px !important; height: 30px !important; }
 .market-coin b, .market-coin small { display: block; }
 .market-coin small { color: var(--text-muted); margin-top: 0.15rem; }
-.load-more { display: block; width: fit-content; margin: 0.9rem auto 0; padding: 0.58rem 1.1rem; color: var(--primary); background: var(--bg); border: 1px solid var(--border); border-radius: 7px; font-size: 0.82rem; font-weight: 600; box-shadow: none; }
+.load-more { display: block; width: fit-content; padding: 0.58rem 1.1rem; color: var(--primary); background: var(--bg); border: 1px solid var(--border); border-radius: 7px; font-size: 0.82rem; font-weight: 600; box-shadow: none; }
 .load-more:hover { color: var(--bg); background: var(--primary); }
 
 @media (min-width: 720px) {
