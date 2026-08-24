@@ -47,6 +47,7 @@ export default class BtcChartFrame extends HTMLElement {
                 height:100%;
 
                 border:0;
+                pointer-events: none;
 
             }
 

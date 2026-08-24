@@ -37,7 +37,7 @@
 .market-stat.negative strong { color: var(--danger); }
 .market-pulse-note { margin: 0.95rem 0 0; color: var(--text-muted); font-size: 0.78rem; }
 
-market-table { display: block; margin-bottom: 2.75rem; }
+market-table { display: block; margin-bottom: 2.75rem;margin-top:1.2rem; }
 market-table .table-wrapper { min-height: 0; margin: 0; }
 .market-coin { display: flex; align-items: center; gap: 0.55rem; direction: ltr; text-align: left; }
 .market-coin img { width: 30px !important; height: 30px !important; }
