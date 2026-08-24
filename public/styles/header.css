@@ -214,6 +214,7 @@ header nav button {
   top: 0;
   bottom: 0;
   transform: translateX(100%);
+  display: flex;
 }
 
 #phone-nav-menu ul {

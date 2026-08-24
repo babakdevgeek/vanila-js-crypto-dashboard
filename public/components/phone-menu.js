@@ -65,7 +65,6 @@ export default class CustomPhoneMenu extends HTMLElement {
 
     on_button_click(event) {
         event.stopPropagation();
-        this.el_phone_menu.style.display = "flex"
         setTimeout(() => {
             this.el_phone_menu.classList.add("show")
         }, 0);
