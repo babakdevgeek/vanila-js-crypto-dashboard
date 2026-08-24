@@ -4,6 +4,7 @@ export default class CustomThemeButton extends HTMLElement {
     constructor() {
         super();
         this.name_local_storage = "THEME";
+        this.on_click = this.on_click.bind(this);
     }
 
     connectedCallback() {
@@ -17,6 +18,9 @@ export default class CustomThemeButton extends HTMLElement {
         this.appendChild(this.el_button_theme);
         this.load()
         this.init_listeners();
+    }
+    disconnectedCallback(){
+        this.el_button_theme?.removeEventListener("click",this.on_click)
     }
 
     get() {
@@ -65,15 +69,20 @@ export default class CustomThemeButton extends HTMLElement {
         this.apply(theme_in_local)
     }
 
-    init_listeners() {
-        this.el_button_theme.addEventListener("click", (e) => {
+    dispatch_theme_change(){
+        window.dispatchEvent(new Event("theme-change"))
+    }
+
+    on_click(){
             const theme = this.get()
             const oposite = theme === "dark" ? "light" : "dark"
-
             this.apply(oposite)
             this.set(oposite)
+            this.dispatch_theme_change();
+    }
 
-        })
+    init_listeners() {
+        this.el_button_theme.addEventListener("click",this.on_click)
     }
 
     get_icon(theme) {

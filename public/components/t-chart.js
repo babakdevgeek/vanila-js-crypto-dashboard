@@ -5,9 +5,11 @@ export default class CustomTChart extends HTMLElement {
 
     constructor(el_parent_class) {
         super();
+        this.on_theme_change = this.on_theme_change.bind(this);
     }
 
     connectedCallback() {
+        this.init_listeners();
         this.el_parent = create_element({ tag: "tradingview-widget-container" });
         this.el_full_page = create_element({
             tag: "div", id: "trading-view-fullpage", childrens: [
@@ -19,6 +21,17 @@ export default class CustomTChart extends HTMLElement {
         this.appendChild(this.el_full_page);
         // this.el_custom_contaienr = document.getElementById
         this.add_script();
+    }
+    disconnectedCallback(){
+        window.removeEventListener("theme-change",this.on_theme_change);
+    }
+
+    init_listeners(){
+        window.addEventListener("theme-change",
+            this.on_theme_change)
+    }
+    on_theme_change(){
+        this.refresh_script();
     }
 
     refresh_script() {
@@ -36,7 +49,6 @@ export default class CustomTChart extends HTMLElement {
 
         const path = window.location.pathname;
         const path_last_section = path.split("/")[path.split("/").length - 1];
-        console.log(path_last_section);
 
         let coin_symbol;
         if (path_last_section == "chart") {
