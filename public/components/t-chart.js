@@ -47,8 +47,8 @@ export default class CustomTChart extends HTMLElement {
         document.title = "چارت" + " " + coin_symbol;
 
         const root = getComputedStyle(document.documentElement);
-        const bg = root.getPropertyValue(theme === "light" ? "--td-light-bg-rgb" : "--td-dark-bg-rgb").trim();
-        const grid = root.getPropertyValue(theme === "light" ? "--td-light-grid-rgb" : "--td-dark-grid-rgb").trim();
+        const bg = root.getPropertyValue("--bg-dark").trim();
+        const grid = root.getPropertyValue("--primary").trim();
 
         const config = {
             "allow_symbol_change": true,
