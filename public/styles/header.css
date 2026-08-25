@@ -21,6 +21,11 @@
   font-weight: 200;
 }
 
+.global #market-change {
+ background: #15223d;
+  padding: 0 0.4rem;
+}
+
 .dark .global {
   background-color: #071526;
   color: #e4edfc;
